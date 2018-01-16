@@ -747,10 +747,36 @@ abstract class Connector {
 	/* CHECKERS */
 
 	final public function XMLEncode($P_s_in){
+
+    // @SEE https://static-kb.afas.nl/datafiles/help/2_9_7/SE/NL/index.htm#App_Con_Update_Fields.htm#o24284
 	  $L_s_out = str_replace("&", "&amp;", $P_s_in);
 	  $L_s_out = str_replace("%", "&#37;", $L_s_out);
 	  $L_s_out = str_replace("<", "&lt;",  $L_s_out);
 	  $L_s_out = str_replace(">", "&gt;",  $L_s_out);
+	  $L_s_out = str_replace("'", "&apos;",  $L_s_out);
+	  $L_s_out = str_replace("\"", "&quot;",  $L_s_out);
+    $L_s_out = str_replace("À", "&#192;", $L_s_out);
+    $L_s_out = str_replace("Á", "&#193;", $L_s_out);
+    $L_s_out = str_replace("Ç", "&#199;", $L_s_out);
+    $L_s_out = str_replace("È", "&#200;", $L_s_out);
+    $L_s_out = str_replace("É", "&#201;", $L_s_out);
+    $L_s_out = str_replace("Ê", "&#202;", $L_s_out);
+    $L_s_out = str_replace("Ë", "&#203;", $L_s_out);
+    $L_s_out = str_replace("Ï", "&#207;", $L_s_out);
+    $L_s_out = str_replace("Ö", "&#214;", $L_s_out);
+    $L_s_out = str_replace("Ü", "&#220;", $L_s_out);
+    $L_s_out = str_replace("à", "&#224;", $L_s_out);
+    $L_s_out = str_replace("á", "&#225;", $L_s_out);
+    $L_s_out = str_replace("ä", "&#228;", $L_s_out);
+    $L_s_out = str_replace("ç", "&#231;", $L_s_out);
+    $L_s_out = str_replace("è", "&#232;", $L_s_out);
+    $L_s_out = str_replace("é", "&#233;", $L_s_out);
+    $L_s_out = str_replace("ê", "&#234;", $L_s_out);
+    $L_s_out = str_replace("ë", "&#235;", $L_s_out);
+    $L_s_out = str_replace("ï", "&#239;", $L_s_out);
+    $L_s_out = str_replace("ö", "&#246;", $L_s_out);
+    $L_s_out = str_replace("ü", "&#252;", $L_s_out);
+
 	  return (string) $L_s_out;
 	}
 
